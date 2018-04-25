@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UPM" Class="LINQtoSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\UPM.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True" SettingsObjectName="UPM.Properties.Settings" SettingsPropertyName="UPMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Branch" Member="Branches">
+    <Type Name="Branch">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Branch_Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Branch_Student" Member="Students" ThisKey="ID" OtherKey="Branch_ID" Type="Student" />
+      <Association Name="Branch_Professor" Member="Professors" ThisKey="ID" OtherKey="Branch_ID" Type="Professor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Education_Degree" Member="Education_Degrees">
+    <Type Name="Education_Degree">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DegreeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Education_Degree_Student" Member="Students" ThisKey="ID" OtherKey="Degree_ID" Type="Student" />
+      <Association Name="Education_Degree_Professor" Member="Professors" ThisKey="ID" OtherKey="Degree_ID" Type="Professor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Project_Student_Relation" Member="Project_Student_Relations">
+    <Type Name="Project_Student_Relation">
+      <Column Name="Project_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Student_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Student_Project_Student_Relation" Member="Student" ThisKey="Student_ID" OtherKey="ID" Type="Student" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Project_Project_Student_Relation" Member="Project" ThisKey="Project_ID" OtherKey="ID" Type="Project" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_Code" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Branch_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Degree_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Phone_No" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BirthDay" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Entry_Year" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Entry_Term" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Student_Project_Student_Relation" Member="Project_Student_Relations" ThisKey="ID" OtherKey="Student_ID" Type="Project_Student_Relation" />
+      <Association Name="Branch_Student" Member="Branch" ThisKey="Branch_ID" OtherKey="ID" Type="Branch" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Education_Degree_Student" Member="Education_Degree" ThisKey="Degree_ID" OtherKey="ID" Type="Education_Degree" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Professor" Member="Professors">
+    <Type Name="Professor">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Degree_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Branch_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Professor_Project" Member="Projects" ThisKey="ID" OtherKey="Guide_Professor_ID" Type="Project" />
+      <Association Name="Professor_Project1" Member="Projects1" ThisKey="ID" OtherKey="Juror_Professor_ID" Type="Project" />
+      <Association Name="Professor_Project2" Member="Projects2" ThisKey="ID" OtherKey="Manager_Professor_ID" Type="Project" />
+      <Association Name="Professor_Project3" Member="Projects3" ThisKey="ID" OtherKey="Project_Professor_ID" Type="Project" />
+      <Association Name="Branch_Professor" Member="Branch" ThisKey="Branch_ID" OtherKey="ID" Type="Branch" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Education_Degree_Professor" Member="Education_Degree" ThisKey="Degree_ID" OtherKey="ID" Type="Education_Degree" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Project" Member="Projects">
+    <Type Name="Project">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Project_Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ProposalText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Project_Professor_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Guide_Professor_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Manager_Professor_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Juror_Professor_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Start_Date" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="End_Date" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Guide_Grade" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Juror_Grade" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Project_Project_Student_Relation" Member="Project_Student_Relations" ThisKey="ID" OtherKey="Project_ID" Type="Project_Student_Relation" />
+      <Association Name="Professor_Project" Member="GuideProfessor" Storage="_Professor" ThisKey="Guide_Professor_ID" OtherKey="ID" Type="Professor" IsForeignKey="true" />
+      <Association Name="Professor_Project1" Member="JurorProfessor" Storage="_Professor1" ThisKey="Juror_Professor_ID" OtherKey="ID" Type="Professor" IsForeignKey="true" />
+      <Association Name="Professor_Project2" Member="ManagerProfessor" Storage="_Professor2" ThisKey="Manager_Professor_ID" OtherKey="ID" Type="Professor" IsForeignKey="true" />
+      <Association Name="Professor_Project3" Member="ProjectProfessor" Storage="_Professor3" ThisKey="Project_Professor_ID" OtherKey="ID" Type="Professor" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

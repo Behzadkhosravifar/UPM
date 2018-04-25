@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SchemaVersion="2">
+  <SketchFlowGuid>DF59E6FF-9AA0-426B-BB9B-D2E353E81739</SketchFlowGuid>
+  <StartScreen>SnowboardScreens.Start</StartScreen>
+  <Screens>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SnowboardScreens.Start</ClassName>
+      <DisplayName>Start</DisplayName>
+      <FileName>Start.xaml</FileName>
+      <Annotations>
+        <Annotation>
+          <Id />
+          <Text>This sample project contains a few annotations that provide explanations about the sample...</Text>
+          <Top>143.093</Top>
+          <Left>238</Left>
+          <Author>Expression Samples</Author>
+          <AuthorInitials>ES</AuthorInitials>
+          <SerialNumber>1</SerialNumber>
+          <VisibleAtRuntime>true</VisibleAtRuntime>
+          <TimeStamp>2009-06-25T01:42:11</TimeStamp>
+        </Annotation>
+      </Annotations>
+      <Position>
+        <X>38</X>
+        <Y>31</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SnowboardScreens.Review</ClassName>
+      <DisplayName>ReviewCart</DisplayName>
+      <FileName>Review.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>635</X>
+        <Y>77</Y>
+      </Position>
+      <VisualTag>3</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SnowboardScreens.Boards</ClassName>
+      <DisplayName>Boards</DisplayName>
+      <FileName>Boards.xaml</FileName>
+      <Annotations>
+        <Annotation>
+          <Id />
+          <Text>The catalog is a list box bound to the snowboards sample data source in the data pane, with a data template to make it look right. 
+There is also a sample behavior on this list box that lets you drag items from that list into the shopping cart.
+The behavior is part of this sample project.</Text>
+          <Top>109.287</Top>
+          <Left>168.783</Left>
+          <Author>Expression Samples</Author>
+          <AuthorInitials>ES</AuthorInitials>
+          <SerialNumber>3</SerialNumber>
+          <VisibleAtRuntime>true</VisibleAtRuntime>
+          <TimeStamp>2009-06-25T05:41:13</TimeStamp>
+        </Annotation>
+        <Annotation>
+          <Id />
+          <Text>The cart is also a listbox. We want to be able to drag items from the catalog box into the cart. Because of that, we don't really want to have a data binding to this list - it would be in the way of the drag list item behavior on the catalog. 
+On the other hand, to edit the data template, you really want a binding, just to see what you are doing. You can temporarily bind the list box by just dragging the snowboards collection from the data pane while holding the Shift key (this will create a binding without replacing the existing data template). 
+The data template in this example has a behavior on the "remove" button that will let you remove items dropped into the cart at runtime.</Text>
+          <Top>108.713</Top>
+          <Left>633</Left>
+          <Author>Expression Samples</Author>
+          <AuthorInitials>ES</AuthorInitials>
+          <SerialNumber>2</SerialNumber>
+          <VisibleAtRuntime>true</VisibleAtRuntime>
+          <TimeStamp>2009-06-25T19:17:59</TimeStamp>
+        </Annotation>
+      </Annotations>
+      <Position>
+        <X>512</X>
+        <Y>3</Y>
+      </Position>
+      <VisualTag>3</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SnowboardScreens.Boots</ClassName>
+      <DisplayName>Boots</DisplayName>
+      <FileName>Boots.xaml</FileName>
+      <Annotations>
+        <Annotation>
+          <Id />
+          <Text>This screen demonstrates two ways to create animation for functionality walkthroughs:
+One uses storyboard-style SketchFlow animations, the other uses normal keyframe animation inside of a state, within the "Walkthrough" state group.
+You can reset the screen by running the Reset animation or by pressing the Refresh button in the SketchFlow player.</Text>
+          <Top>110.7</Top>
+          <Left>12.5</Left>
+          <Author>Expression Samples</Author>
+          <AuthorInitials>ES</AuthorInitials>
+          <SerialNumber>1</SerialNumber>
+          <VisibleAtRuntime>true</VisibleAtRuntime>
+          <TimeStamp>2009-06-26T00:39:32</TimeStamp>
+        </Annotation>
+      </Annotations>
+      <Position>
+        <X>486</X>
+        <Y>79</Y>
+      </Position>
+      <VisualTag>3</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SnowboardScreens.Welcome</ClassName>
+      <DisplayName>Welcome</DisplayName>
+      <FileName>Welcome.xaml</FileName>
+      <Annotations>
+        <Annotation>
+          <Id />
+          <Text>This menu component was created by first drawing the menu on this screen, and then converting it into a component screen using the "Make Into Component" command. Navigation was then set up on that menu component screen, so that all screens sharing this component would also automatically share the same navigation without any extra work
+</Text>
+          <Top>312</Top>
+          <Left>348</Left>
+          <Author>Expression Samples</Author>
+          <AuthorInitials>ES</AuthorInitials>
+          <SerialNumber>1</SerialNumber>
+          <VisibleAtRuntime>true</VisibleAtRuntime>
+          <TimeStamp>2009-06-25T02:41:07</TimeStamp>
+        </Annotation>
+      </Annotations>
+      <Position>
+        <X>209</X>
+        <Y>31</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SnowboardScreens.Bindings</ClassName>
+      <DisplayName>Bindings</DisplayName>
+      <FileName>Bindings.xaml</FileName>
+      <Annotations>
+        <Annotation>
+          <Id />
+          <Text>This page illustrates how states can be used in a prototype. Note that the state shows up in the SketchFlow player just like navigation connections.
+You can wire up states to controls by selecting a control and choosing "Activate State" from the context menu.</Text>
+          <Top>125.63</Top>
+          <Left>24.17</Left>
+          <Author>Expression Samples</Author>
+          <AuthorInitials>ES</AuthorInitials>
+          <SerialNumber>1</SerialNumber>
+          <VisibleAtRuntime>true</VisibleAtRuntime>
+          <TimeStamp>2009-06-25T19:15:51</TimeStamp>
+        </Annotation>
+      </Annotations>
+      <Position>
+        <X>458</X>
+        <Y>152</Y>
+      </Position>
+      <VisualTag>3</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SnowboardScreens.Community</ClassName>
+      <DisplayName>Community</DisplayName>
+      <FileName>Community.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>206</X>
+        <Y>134</Y>
+      </Position>
+      <VisualTag>2</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Composition</Type>
+      <ClassName>SnowboardScreens.Menu</ClassName>
+      <DisplayName>Menu</DisplayName>
+      <FileName>Menu.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>345</X>
+        <Y>-65</Y>
+      </Position>
+      <VisualTag>1</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SnowboardScreens.Checkout</ClassName>
+      <DisplayName>Checkout</DisplayName>
+      <FileName>Checkout.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>802</X>
+        <Y>81</Y>
+      </Position>
+      <VisualTag>3</VisualTag>
+    </Screen>
+    <Screen>
+      <Type>Navigation</Type>
+      <ClassName>SnowboardScreens.SketchStylesExample</ClassName>
+      <DisplayName>Sketch Styles</DisplayName>
+      <FileName>SketchStylesExample.xaml</FileName>
+      <Annotations />
+      <Position>
+        <X>38</X>
+        <Y>112</Y>
+      </Position>
+      <VisualTag>0</VisualTag>
+    </Screen>
+  </Screens>
+  <Connections>
+    <Connection>
+      <Source>SnowboardScreens.Boards</Source>
+      <Target>SnowboardScreens.Review</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Boots</Source>
+      <Target>SnowboardScreens.Review</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Start</Source>
+      <Target>SnowboardScreens.Welcome</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Bindings</Source>
+      <Target>SnowboardScreens.Review</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Boots</Source>
+      <Target>SnowboardScreens.Menu</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Bindings</Source>
+      <Target>SnowboardScreens.Menu</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Welcome</Source>
+      <Target>SnowboardScreens.Menu</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Menu</Source>
+      <Target>SnowboardScreens.Boards</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Menu</Source>
+      <Target>SnowboardScreens.Boots</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Menu</Source>
+      <Target>SnowboardScreens.Bindings</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Menu</Source>
+      <Target>SnowboardScreens.Community</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Community</Source>
+      <Target>SnowboardScreens.Welcome</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Review</Source>
+      <Target>SnowboardScreens.Checkout</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Start</Source>
+      <Target>SnowboardScreens.SketchStylesExample</Target>
+      <Type>Navigation</Type>
+      <TransitionType>Fade</TransitionType>
+      <VisualTag>0</VisualTag>
+    </Connection>
+    <Connection>
+      <Source>SnowboardScreens.Boards</Source>
+      <Target>SnowboardScreens.Menu</Target>
+      <Type>Composition</Type>
+      <TransitionType>None</TransitionType>
+      <VisualTag>1</VisualTag>
+    </Connection>
+  </Connections>
+  <BrandingText />
+  <RuntimeOptions>
+    <HideNavigation>false</HideNavigation>
+    <HideFlowGraph>false</HideFlowGraph>
+    <HideAnnotationAndInk>false</HideAnnotationAndInk>
+    <DisableInking>false</DisableInking>
+    <HideDesignTimeAnnotations>false</HideDesignTimeAnnotations>
+  </RuntimeOptions>
+  <VisualTags>
+    <VisualTag>
+      <Name>Navigation</Name>
+      <Color>FF1E2AD6</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Component</Name>
+      <Color>FF178F11</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Yellow</Name>
+      <Color>FFFEC600</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Orange</Name>
+      <Color>FFF06000</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Red</Name>
+      <Color>FFCC0202</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Violet</Name>
+      <Color>FF780099</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>Gray</Name>
+      <Color>FF6B6B6B</Color>
+    </VisualTag>
+    <VisualTag>
+      <Name>White</Name>
+      <Color>FFFFFFFF</Color>
+    </VisualTag>
+  </VisualTags>
+  <ViewState>
+    <Zoom>0.8</Zoom>
+    <Center>
+      <X>443.56779474937986</X>
+      <Y>54.152876970979548</Y>
+    </Center>
+  </ViewState>
+</Data>

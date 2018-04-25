@@ -1,0 +1,39 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:UPM"    
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" mc:Ignorable="d" x:Class="UPM.SplashScreen"    
+        Title="SplashScreen" Height="200   " Width="654" WindowStartupLocation="CenterScreen" WindowStyle="None" 
+        Background="Orange" BorderBrush="DarkOrange" BorderThickness="3" ShowInTaskbar="False" ResizeMode="NoResize" Topmost="True" Cursor="Wait" Loaded="Window_Loaded">
+	<Window.Resources>
+		<Storyboard x:Key="StoryboardPleaseWait">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" AutoReverse="False" RepeatBehavior="Forever" Storyboard.TargetName="label2">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="Please Wait "/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="Please Wait ."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="Please Wait . ."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="Please Wait . . ."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.8" Value="Please Wait . . . ."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Please Wait . . . . ."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.2" Value="Please Wait . . . . . ."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.4" Value="Please Wait . . . . . . ."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.6" Value="Please Wait . . . . . . . ."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:1.8" Value="Please Wait . . . . . . . . ."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:2" Value="Please Wait . . . . . . . . . ."/>
+				<DiscreteObjectKeyFrame KeyTime="0:0:2.2" Value="Please Wait . . . . . . . . . . ."/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+	</Window.Resources>
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="FrameworkElement.Loaded">
+			<BeginStoryboard Storyboard="{StaticResource StoryboardPleaseWait}"/>
+		</EventTrigger>
+	</Window.Triggers>
+    <Grid>
+    	<Grid.ContextMenu>
+    		<ContextMenu BorderBrush="#FF595959"/>
+    	</Grid.ContextMenu>
+        <Label Height="28" Margin="18,0,18,18" x:Name="label2" VerticalAlignment="Bottom"
+               Foreground="White" FontFamily="/UPM;component/Fonts/#Segoe UI"/>
+        <Image Margin="4,20,4,74" Source="UPM.png" Stretch="Fill" d:LayoutOverrides="VerticalAlignment"/>
+    </Grid>
+</Window>

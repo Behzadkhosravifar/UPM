@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_UserPass">
+  <DataContextMoniker Name="/LINQ_UserPassDataContext" />
+  <nestedChildShapes>
+    <classShape Id="07ab9089-2bf6-4bc8-8d50-d027c115256e" absoluteBounds="1.375, 1.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LINQ_UserPassDataContext/User_Password" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c794593-6fb8-4a18-9757-30a8398d730f" absoluteBounds="1.3900000000000001, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

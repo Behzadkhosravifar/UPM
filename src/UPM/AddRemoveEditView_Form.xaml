@@ -1,0 +1,82 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="UPM.AddRemoveEditView_Form"
+	x:Name="Window"
+	Title="AddRemoveEditView_Form"
+	Width="564" Height="88" AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="Manual">
+	<Window.Resources>
+		<Storyboard x:Key="OnMouseEnter_Close">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="ClosePath">
+				<EasingColorKeyFrame KeyTime="0:0:0.05" Value="#FF23BDF7"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF46C5F5"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.15" Value="#FF60CCF5"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF72D3F7"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.25" Value="#FF8ADAF7"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FFA5E1F7"/>
+			</ColorAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ClosePath">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.05" Value="30"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="60"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="90"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="120"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.25" Value="150"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="180"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="OnMouseEnter_Close_Revers">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="ClosePath">
+				<SplineColorKeyFrame KeyTime="0" Value="#FFA5E1F7"/>
+				<SplineColorKeyFrame KeyTime="0:0:0.05" Value="#FF8ADAF7"/>
+				<SplineColorKeyFrame KeyTime="0:0:0.1" Value="#FF72D3F7"/>
+				<SplineColorKeyFrame KeyTime="0:0:0.15" Value="#FF60CCF5"/>
+				<SplineColorKeyFrame KeyTime="0:0:0.2" Value="#FF46C5F5"/>
+				<SplineColorKeyFrame KeyTime="0:0:0.25" Value="#FF23BDF7"/>
+				<SplineColorKeyFrame KeyTime="0:0:0.3" Value="#FF00ADEE"/>
+			</ColorAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="ClosePath">
+				<SplineDoubleKeyFrame KeyTime="0" Value="180"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.05" Value="150"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="120"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.15" Value="90"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="60"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.25" Value="30"/>
+				<SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</Window.Resources>
+	<Window.Triggers>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="btnClose">
+			<BeginStoryboard x:Name="OnMouseEnter_Close_BeginStoryboard" Storyboard="{StaticResource OnMouseEnter_Close}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="btnClose">
+			<BeginStoryboard x:Name="OnMouseEnter_Close_Revers_BeginStoryboard" Storyboard="{StaticResource OnMouseEnter_Close_Revers}"/>
+		</EventTrigger>
+	</Window.Triggers>
+	<Window.Effect>
+		<DropShadowEffect BlurRadius="10" RenderingBias="Quality"/>
+	</Window.Effect>
+	<Window.Background>
+		<SolidColorBrush Color="#FFFF9A9A" Opacity="0.295"/>
+	</Window.Background>
+
+	<Grid x:Name="LayoutRoot">
+		<Button x:Name="btnAdd" Content="Add" Margin="25,0,429,20" Style="{DynamicResource Button-Sketch}" BorderThickness="1" Cursor="Hand" ToolTip="Add new items" Height="40" VerticalAlignment="Bottom" Click="btnAdd_Click"/>
+		<Button x:Name="btnRemove" Content="Remove" Margin="160,0,295,20" Style="{DynamicResource Button-Sketch}" BorderThickness="1" Cursor="Hand" ToolTip="Delete a item from database" Height="40" VerticalAlignment="Bottom" Click="btnRemove_Click"/>
+		<Button x:Name="btnEdit" Content="Edit" Margin="295,0,160,20" Style="{DynamicResource Button-Sketch}" BorderThickness="1" Cursor="Hand" ToolTip="Edit a item from database" Height="40" VerticalAlignment="Bottom" Click="btnEdit_Click"/>
+		<Button x:Name="btnView" Content="View" Margin="430,0,25,20" Style="{DynamicResource Button-Sketch}" BorderThickness="1" Cursor="Hand" ToolTip="View or Search any items" Height="40" VerticalAlignment="Bottom" Click="btnView_Click"/>
+		<Path x:Name="ClosePath" Data="M28,15 C28,22.179702 22.179702,28 15,28 C7.8202983,28 2,22.179702 2,15 C2,7.8202983 7.8202983,2 15,2 C22.179702,2 28,7.8202983 28,15 z M8.636039,8.636039 C16.372619,16.372619 13.627381,13.627381 21.363961,21.363961 M21.363961,8.636039 C13.627383,16.372617 16.372617,13.627383 8.636039,21.363961" Height="22" RenderTransformOrigin="0.5,0.5" Stretch="Fill" Stroke="#FF00ADEE" StrokeThickness="3" ToolTip="Close" Width="22" HorizontalAlignment="Right" Margin="0,6,6,0" VerticalAlignment="Top" >
+			<Path.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</Path.RenderTransform>
+		</Path>
+		<Button x:Name="btnClose" Content="" HorizontalAlignment="Right" VerticalAlignment="Top" Width="22" Margin="0,6,6,0" Height="22" Opacity="0" Click="Button_Click"/>
+		<TextBlock x:Name="txtTitle" Height="16" Margin="8,2,0,0" TextWrapping="Wrap" Text="Title" VerticalAlignment="Top" Style="{DynamicResource TextBlock-Sketch}" HorizontalAlignment="Left"/>
+	</Grid>
+</Window>

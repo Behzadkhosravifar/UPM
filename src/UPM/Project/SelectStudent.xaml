@@ -1,0 +1,17 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="UPM.SelectStudent"
+	x:Name="Window"
+	Title="Select a Student"
+	Width="300" Height="400" AllowsTransparency="True" WindowStyle="None" Background="Transparent" ResizeMode="NoResize" Icon="pack://siteoforigin:,,,/Student/users.ico" ShowInTaskbar="False" Topmost="True" WindowStartupLocation="CenterOwner" ToolTip="Select a Student for Project">
+
+	<Grid x:Name="LayoutRoot">
+		<Button x:Name="btnOk" Content="OK" HorizontalAlignment="Left" Height="32" Margin="8,0,0,13" Style="{DynamicResource Button-Sketch}" VerticalAlignment="Bottom" Width="104" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" Cursor="Hand" ToolTip="Click to accept selected student for Project." Click="btnOk_Click"/>
+		<Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Height="32" Margin="188,0,0,13" Style="{DynamicResource Button-Sketch}" VerticalAlignment="Bottom" Width="104" Cursor="Hand" ToolTip="Cancel any selected students." d:LayoutOverrides="VerticalAlignment" Click="btnCancel_Click"/>
+		<TextBox x:Name="txtSearchStudentFName" Height="24" Margin="0,2,0,0" Style="{DynamicResource TextBox-Sketch}" Text="نام دانشجو" VerticalAlignment="Top" ToolTip="Search student by first name" TextAlignment="Center" TextOptions.TextHintingMode="Fixed" MaxLines="1" TextChanged="txtSearchStudentFName_TextChanged" MouseDown="txtSearchStudentFName_MouseDown" MouseLeave="txtSearchStudentFName_MouseLeave" KeyDown="txtSearchStudentFName_KeyDown" KeyUp="txtSearchStudentFName_KeyUp"/>
+		<TextBox x:Name="txtSearchStudentLName" Height="24" Margin="0,29,0,0" Style="{DynamicResource TextBox-Sketch}" Text="نام خانوادگی دانشجو" VerticalAlignment="Top" ToolTip="Search student by last name" TextAlignment="Center" TextOptions.TextHintingMode="Fixed" MaxLines="1" TextChanged="txtSearchStudentLName_TextChanged" MouseDown="txtSearchStudentLName_MouseDown" MouseLeave="txtSearchStudentLName_MouseLeave" KeyDown="txtSearchStudentLName_KeyDown" KeyUp="txtSearchStudentLName_KeyUp"/>
+		<DataGrid x:Name="dgvStudent" Margin="0,57,0,56" ToolTip="Funded or all student lists."/>
+	</Grid>
+</Window>
